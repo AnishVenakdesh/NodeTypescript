@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import { createConnection } from 'typeorm';
+import { ConnectionOptions, ConnectionOptionsReader, createConnection } from 'typeorm';
 import { Server } from './rest/server';
 
 (async function main() {
@@ -12,7 +12,7 @@ import { Server } from './rest/server';
 		const server = createServer(app);
 		
         // Start express server
-        var port =8080
+        var port =8500
 		server.listen(port);
 
 		

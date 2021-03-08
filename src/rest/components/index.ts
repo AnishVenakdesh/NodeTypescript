@@ -1,5 +1,7 @@
 import { Router } from 'express';
+import { format } from 'url';
 import { IndexRoutes } from './controller/IndexRouter';
+import{registerRoutes } from './controller/registerRouter';
 
 
 /**
@@ -11,6 +13,6 @@ import { IndexRoutes } from './controller/IndexRouter';
  */
 export function registerApiRoutes(router: Router): void {
 	router.use(`/`, new IndexRoutes().router);
-	
+	router.use(`/`, new registerRoutes().router);
 	router.get(`/`, (function(req, res){res.json(Array({ status: 200,  message: 'success' }) );}));
 }

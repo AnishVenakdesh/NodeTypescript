@@ -11,11 +11,13 @@
    "dependencies": {
       "decko": "^1.2.0",
       "express": "^4.17.1",
+      "jsonwebtoken": "^8.5.1",
       "mysql": "^2.14.1",
       "reflect-metadata": "^0.1.13",
       "typeorm": "^0.2.30"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "ts-node src/index.ts",
+      "dev": "node src/index.ts"
    }
 }
