@@ -1,10 +1,13 @@
 import { createServer } from 'http';
-import { ConnectionOptions, ConnectionOptionsReader, createConnection } from 'typeorm';
+import { Connection, getConnectionManager, getConnectionOptions,createConnection, getConnection, QueryRunner } from 'typeorm';
 import { Server } from './rest/server';
 
-(async function main() {
+(async function main() {	
 	try {
-		await createConnection();
+		await createConnection().then(async connection => {
+
+
+		}).catch(error => console.log(error));
 
 		// Init express server
 		const app = new Server().app;
@@ -12,7 +15,7 @@ import { Server } from './rest/server';
 		const server = createServer(app);
 		
         // Start express server
-        var port =8500
+        const port =8500
 		server.listen(port);
 
 		
