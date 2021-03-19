@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
-@Entity()
+@Entity('register')
 export class register {
    @PrimaryGeneratedColumn()
    Id: number;
@@ -21,6 +21,5 @@ export class register {
 
     @Column()
     organizationName:string;
-    count: number;
     
 }
